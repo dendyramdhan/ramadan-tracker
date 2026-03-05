@@ -7,10 +7,10 @@ import (
 )
 
 type TargetService struct {
-	repo *repository.TargetMemoryRepository
+	repo repository.TargetRepositoryInterface
 }
 
-func NewTargetService(repo *repository.TargetMemoryRepository) *TargetService {
+func NewTargetService(repo repository.TargetRepositoryInterface) *TargetService {
 	return &TargetService{repo: repo}
 }
 

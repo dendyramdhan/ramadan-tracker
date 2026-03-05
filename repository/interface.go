@@ -7,7 +7,7 @@ import "ramadan-tracker-bts/models"
 // - In-memory (untuk demo/testing)
 // - PostgreSQL (production)
 // - MongoDB, Redis, dll.
-type TargetRepository interface {
+type TargetRepositoryInterface interface {
 	FindAll() ([]models.Target, error)
 	FindByID(id string) (*models.Target, error)
 	Create(target models.Target) error
