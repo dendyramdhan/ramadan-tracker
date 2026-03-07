@@ -41,7 +41,7 @@ func main() {
 		})
 	})
 
-	// API routes dengan authentication middleware
+	// API routes dengan middleware
 	api := app.Group("/api")
 
 	api.Get("/targets", targetHandler.GetAll)

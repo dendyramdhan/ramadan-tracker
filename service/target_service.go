@@ -1,7 +1,6 @@
 package service
 
 import (
-	"fmt"
 	"ramadan-tracker-bts/models"
 	"ramadan-tracker-bts/repository"
 )
@@ -23,13 +22,6 @@ func (s *TargetService) GetByID(id string) (*models.Target, error) {
 }
 
 func (s *TargetService) Create(t models.Target) error {
-	// Contoh validasi bisnis:
-	if t.Ibadah == "" {
-		return fmt.Errorf("ibadah tidak boleh kosong")
-	}
-	if t.Status == "" {
-		t.Status = "Proses" // Default status
-	}
 	s.repo.Create(t)
 	return nil
 }
