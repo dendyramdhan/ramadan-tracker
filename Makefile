@@ -24,7 +24,7 @@ setup: ## Create and bootstrap buildx builder for multiplatform
 build: setup ## Build image for local platform and load into Docker
 	docker buildx build \
 		--tag $(FULL_IMAGE) \
-		--file Dockerfile \
+		--file Dockerfile.multi \
 		--load \
 		.
 
@@ -32,7 +32,7 @@ build-multi: setup ## Build multiplatform image and push to registry
 	docker buildx build \
 		--platform $(PLATFORMS) \
 		--tag $(FULL_IMAGE) \
-		--file Dockerfile \
+		--file Dockerfile.multi \
 		--push \
 		.
 
@@ -40,7 +40,7 @@ push: setup ## Push multiplatform image to registry
 	docker buildx build \
 		--platform $(PLATFORMS) \
 		--tag $(FULL_IMAGE) \
-		--file Dockerfile \
+		--file Dockerfile.multi \
 		--push \
 		.
 
